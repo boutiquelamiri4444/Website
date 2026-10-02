@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Lamiri</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f7f7f7;color:#222}
+    header{background:#111;color:white;padding:22px 16px;text-align:center;position:sticky;top:0;z-index:10}
+    header h1{font-size:28px;margin-bottom:7px}
+    header p{color:#ccc}
+    nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:15px;background:white;box-shadow:0 2px 8px #0001}
+    nav button{border:0;background:#eee;padding:10px 16px;border-radius:22px;cursor:pointer;font-weight:bold}
+    nav button:hover{background:#111;color:white}
+    .hero{padding:45px 20px;text-align:center;background:linear-gradient(135deg,#111,#444);color:white}
+    .hero h2{font-size:32px;margin-bottom:12px}
+    .hero p{font-size:17px;margin-bottom:20px;color:#ddd}
+    .hero a{display:inline-block;background:white;color:#111;padding:12px 22px;border-radius:25px;text-decoration:none;font-weight:bold}
+    .products{max-width:1100px;margin:30px auto;padding:0 15px}
+    .products h2{text-align:center;margin-bottom:25px;font-size:26px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+    .card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 3px 12px #0001}
+    .card img{width:100%;height:230px;object-fit:cover;background:#eee}
+    .info{padding:15px}
+    .info h3{margin-bottom:7px}
+    .price{font-size:20px;font-weight:bold;margin:10px 0}
+    .order{display:block;text-align:center;background:#111;color:white;padding:10px;border-radius:9px;text-decoration:none}
+    footer{margin-top:40px;background:#111;color:#ddd;text-align:center;padding:25px}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🛍️ Boutique Lamiri</h1>
+  <p>ملابس • أحذية • إكسسوارات وأشياء أخرى</p>
+</header>
+
+<nav>
+  <button onclick="filterProducts('all')">الكل</button>
+  <button onclick="filterProducts('clothes')">ملابس</button>
+  <button onclick="filterProducts('shoes')">أحذية</button>
+  <button onclick="filterProducts('other')">أشياء أخرى</button>
+</nav>
+
+<section class="hero">
+  <h2>مرحبا بيكم في Boutique Lamiri</h2>
+  <p>اكتشفوا أحدث المنتجات والأسعار المناسبة</p>
+  <a href="#products">شوف المنتجات</a>
+</section>
+
+<section class="products" id="products">
+  <h2>منتجاتنا</h2>
+
+  <div class="grid">
+
+    <div class="card product clothes">
+      <img src="image-1790887881666.jpg" alt="ملابس">
+      <div class="info">
+        <h3>ملابس</h3>
+        <p>منتج جديد وأنيق</p>
+        <div class="price">السعر: اتصل بنا</div>
+        <a class="order" href="https://wa.me/" target="_blank">اطلب الآن</a>
+      </div>
+    </div>
+
+    <div class="card product shoes">
+      <img src="IMG_20261001_135855.jpg" alt="أحذية">
+      <div class="info">
+        <h3>أحذية</h3>
+        <p>تصاميم عصرية</p>
+        <div class="price">السعر: اتصل بنا</div>
+        <a class="order" href="https://wa.me/" target="_blank">اطلب الآن</a>
+      </div>
+    </div>
+
+    <div class="card product other">
+      <img src="VID_20261002_153758.jpg" alt="منتج آخر">
+      <div class="info">
+        <h3>منتجات أخرى</h3>
+        <p>اكتشف الجديد عندنا</p>
+        <div class="price">السعر: اتصل بنا</div>
+        <a class="order" href="https://wa.me/" target="_blank">اطلب الآن</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Boutique Lamiri — جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+function filterProducts(category){
+  document.querySelectorAll('.product').forEach(function(card){
+    if(category === 'all' || card.classList.contains(category)){
+      card.classList.remove('hidden');
+    }else{
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
